@@ -2,12 +2,14 @@
 
 namespace Core;
 
+use Core\Services\SortService;
+
 return [
   
     'factories' => [
         'SortService' => function($container){
             $model = $container->get(Models\MergeSort::class);
-            return new Service\SortService($model);
+            return new SortService($model);
         }
     ],
     'invokables'=>[
