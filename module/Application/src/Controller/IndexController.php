@@ -7,13 +7,23 @@
 
 namespace Application\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+use Application\Abstracts\BaseController;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController
+class IndexController extends BaseController
 {
+    /*
+     * @var \Core\Service\SortService
+     */
+    protected $SortService;
+    
     public function indexAction()
     {
-        return new ViewModel();
+        $info = $this->SortService->getinfo();
+        
+        return new ViewModel([
+            'info' => $info
+        ]);
     }
+    
 }
