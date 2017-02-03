@@ -12,6 +12,7 @@
  */
 return [
     'Zend\Router',
+    'Zend\Form',
     'Zend\Validator',
     'Application',
     'Core',

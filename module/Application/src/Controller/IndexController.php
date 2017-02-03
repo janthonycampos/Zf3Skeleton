@@ -9,6 +9,7 @@ namespace Application\Controller;
 
 use Application\Abstracts\BaseController;
 use Zend\View\Model\ViewModel;
+use Application\Form\SortForm;
 
 class IndexController extends BaseController
 {
@@ -18,11 +19,18 @@ class IndexController extends BaseController
     protected $SortService;
     
     public function indexAction()
-    {
-        $info = $this->SortService->getinfo();
+    {        
+        $form = new SortForm();
+        $response = [];
+        
+        if($this->getRequest()->isPost()){
+            $data     = $this->params()->fromPost();
+            $response = $this->SortService->sort($data);
+        }
         
         return new ViewModel([
-            'info' => $info
+            'form' => $form,
+            'data' => $response
         ]);
     }
     

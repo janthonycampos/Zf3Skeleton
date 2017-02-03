@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<!--<div class="jumbotron">
     <h1>Welcome to <span class="zf-green">Zend Framework</span></h1>
 
     <p>
@@ -12,10 +12,7 @@
     <p><a class="btn btn-success btn-lg" href="https://github.com/zendframework/zendframework" target="_blank">Fork Zend Framework on GitHub &raquo;</a></p>
 </div>
 
-<?php
-    echo $this->info;
-?>
-<!--<div class="row">
+<div class="row">
 
     <div class="col-md-4">
         <div class="panel panel-default">
@@ -75,3 +72,23 @@
         </div>
     </div>
 </div>-->
+
+<?php 
+    $form->prepare();
+?>
+<div class="jumbotron">
+    <div class="medium-9 columns">
+        <?php echo $this->form()->openTag($form); ?>
+            <div class="form-group">
+                    <label for="numbers"> Entrada </label>
+                    <?php echo $this->formElement($form->get('numbers')); ?>
+            </div>
+            <div class="large-12 columns modal-section-footer">
+                    <div class="large-12 columns text-center">
+                            <button type="submit" id="btnCreateAccount" class="btn btn-success">Iniciar</button>
+                    </div>
+            </div>      
+        <?php echo $this->form()->closeTag(); ?>
+
+  </div>
+</div>

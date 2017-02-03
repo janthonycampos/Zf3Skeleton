@@ -12,6 +12,10 @@ class SortService{
         $this->_sortModel = $model;
     }
     
+    public function sort($data){
+        
+    }
+    
     public function getinfo(){
         return 'hola';
     }
