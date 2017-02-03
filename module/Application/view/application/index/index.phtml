@@ -90,5 +90,12 @@
             </div>      
         <?php echo $this->form()->closeTag(); ?>
 
-  </div>
+    </div>
+    
+    <?php if(!empty($data_sort)) { ?>
+        <div class="medium-9 columns">
+            <?php print_r($data_sort); ?>
+        </div>
+    <?php } ?>
+    
 </div>

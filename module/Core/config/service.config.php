@@ -8,11 +8,11 @@ return [
   
     'factories' => [
         'SortService' => function($container){
-            $model = $container->get(Models\MergeSort::class);
+            $model = $container->get(Models\MergeAlgorithm::class);
             return new SortService($model);
         }
     ],
     'invokables'=>[
-        Models\MergeSort::class => Models\MergeSort::class
+        Models\MergeAlgorithm::class => Models\MergeAlgorithm::class
     ]
 ];

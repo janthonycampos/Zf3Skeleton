@@ -30,7 +30,7 @@ class IndexController extends BaseController
         
         return new ViewModel([
             'form' => $form,
-            'data' => $response
+            'data_sort' => $response
         ]);
     }
     
